@@ -1,0 +1,8 @@
+-- SQLite
+DROP TABLE data;
+
+CREATE TABLE IF NOT EXISTS data (
+    id INTEGER PRIMARY KEY,
+    tank_level REAL NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
