@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/:id', function(req, res, next) {
     try {
-      res.json(quotes.getQuote(req.params.id));
+      res.json(quotes.getOne(req.params.id));
     } catch(err) {
       console.error(`Error while getting quotes `, err.message);
       next(err);

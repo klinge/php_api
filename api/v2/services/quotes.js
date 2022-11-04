@@ -14,7 +14,7 @@ function getAllPaging(page = 1) {
 
 function getAll() {
     const data = db.query(`SELECT * FROM quote`,[]);
-    const meta = {"num_records": data.length};
+    const meta = {"num_records" : data.length};
 
     return {
         data,
@@ -22,9 +22,9 @@ function getAll() {
     }
 }
 
-function getQuote(id = 1) {
+function getOne(id = 1) {
     const data = db.query(`SELECT * FROM quote WHERE id = ?`,[id]);
-    const meta = [data.length];
+    const meta = {"num_records" : data.length};
 
     return {
         data,
@@ -35,5 +35,5 @@ function getQuote(id = 1) {
 module.exports = {
   getAllPaging,
   getAll,
-  getQuote
+  getOne
 }
